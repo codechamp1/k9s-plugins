@@ -1,0 +1,11 @@
+plugins:
+  kubectl-applier:
+    shortCut: Shift-K # Customize this to any key combo you prefer
+    description: Apply resource from editor with kubectl
+    scopes:
+      - all
+    command: ./scripts/k9s-kubectl-applier.sh # Change this to the location where your script is stored.
+    background: false
+    args:
+      - $CONTEXT
+      - $KUBECONFIG
