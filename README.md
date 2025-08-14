@@ -1,6 +1,6 @@
 # k9s Plugins
 
-This repository contains my custom-built and other existing k9s plugins (some of which also integrate with other tools) that improve my productivity, which I’d like to share with the community.
+This repository contains custom-built and other existing k9s plugins (some of which also integrate with other tools) that improve my productivity, which I’d like to share with the community.
 If you’d like to add your own plugin or suggest a tool that could be integrated with k9s plugins, feel free to open an issue so we can review it.
 
 ## Plugins
