@@ -9,3 +9,67 @@ plugins:
     args:
       - $CONTEXT
       - $KUBECONFIG
+  loog-run-selected:
+    shortCut: Ctrl-Y
+    confirm: false
+    scopes:
+      - all
+    description: "👀: Run Selected"
+    command: bash
+    background: false
+    args:
+      - -c
+      - >
+        loog
+        -resource
+        $RESOURCE_GROUP/$RESOURCE_VERSION/$RESOURCE_NAME
+        -filter-expr
+        'Namespaced("$NAMESPACE", "$NAME")'
+  loog-run-namespace:
+    shortCut: Shift-Y
+    confirm: true
+    scopes:
+      - all
+    description: "👀: Run Namespace"
+    command: bash
+    background: false
+    args:
+      - -c
+      - >
+        loog
+        -resource
+        $RESOURCE_GROUP/$RESOURCE_VERSION/$RESOURCE_NAME
+        -filter-expr
+        'Namespace("$NAMESPACE")'
+  certlens-selected:
+    description: "Lens TLS Secret"
+    shortCut: Shift-I
+    command: "certlens"
+    background: false
+    confirm: false
+    args:
+      - --name
+      - $NAME
+      - --namespace
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - --kubeconfig
+      - $KUBECONFIG
+    scope:
+      - secrets
+  certlens-namespace:
+    description: "Lens TLS Secrets"
+    shortCut: Shift-L
+    command: "certlens"
+    background: false
+    confirm: false
+    args:
+      - --namespace
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - --kubeconfig
+      - $KUBECONFIG
+    scope:
+      - secrets
